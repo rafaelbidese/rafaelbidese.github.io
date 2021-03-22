@@ -1,50 +1,23 @@
-# Workflow to build and deploy site to Github Pages using Hugo
+name: hugo-latest-cd
 
-# Name of Workflow
-name: github pages
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  HUGO_ARGS: '--minify'
+
 jobs:
-  # This workflow contains a single job called "deploy"
-  deploy:
-    # The type of runner that the job will run on
+  build:
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
-    # Step 1 - Checks-out your repository under $GITHUB_WORKSPACE
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-          submodules: true  # Fetch Hugo themes
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-    # Step 2 - Sets up the latest version of Hugo
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-          hugo-version: 'latest'
-
-    # Step 3 - Clean and don't fail
-    - name: Clean public directory
-      run: rm -rf public
-
-    # Step 4 - Builds the site using the latest version of Hugo
-    # Also specifies the theme we want to use
-    - name: Build
-      run: hugo --theme=hugo-book
-
-    # Step 6 - Push our generated site to our gh-pages branch
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          
+      - name: 🛎 Check out master
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: 🚀 Build and deploy
+        uses: victoriadrake/hugo-latest-cd@master
