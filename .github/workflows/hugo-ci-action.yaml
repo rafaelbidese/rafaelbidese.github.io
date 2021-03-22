@@ -1,23 +1,30 @@
-name: hugo-latest-cd
+name: hugo publish
 
 on:
   push:
     branches:
-      - master
-
-env:
-  TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  HUGO_ARGS: '--minify'
+    - master
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  build-deploy:
+    runs-on: ubuntu-18.04
     steps:
-      - name: 🛎 Check out master
-        uses: actions/checkout@master
-        with:
-          fetch-depth: 1
-      - name: 🚀 Build and deploy
-        uses: victoriadrake/hugo-latest-cd@master
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+
+    - name: Build
+      run: hugo --minify
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+       
