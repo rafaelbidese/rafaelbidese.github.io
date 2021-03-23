@@ -4,7 +4,6 @@ type: docs
 ---
 
 <img src="rafael.jpeg" style="border-radius: 5%; float: left; padding-right: 15px; height: 200px">
-
 I am a graduate student at <a href="/">Auburn University</a> where I am pursuing a PhD at the <a href="/">Biosystems Engineering Department</a> where I am researching applications of machine learning and deep learning to agriculture problems with my advisor <a href="/">Dr. Yin Bao</a>. I have received my BS in Electronics Engineering and my MS in Electrical Engineering from the Federal University of Santa Catarina (Brazil) where I was advised by <a href="/">Jefferson Brum Marques</a> and <a href="/">Djones Lettnin</a> respectively.
 
 I have experience designing HW and integrating with SW for projects for the academia and the industry. More recently, I have been working on robotics, machine learning and deep learning for computer vision. I am currently working on projects that speed up breeding research trials using of deep learning as a tool for high-throughput plant phenotyping.
