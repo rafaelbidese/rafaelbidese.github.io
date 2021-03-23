@@ -23,22 +23,22 @@ menu:
   after:
     - name: "Github"
       url: "https://github.com/rafaelbidese"
-      weight: 1
+      weight: 2
     - name: "Google Scholar"
       url: ""
-      weight: 2
+      weight: 3
     - name: "LinkedIn"
       url: "https://www.linkedin.com/in/rafael-bidese-4772a8113/"
-      weight: 3 
+      weight: 4 
     - name: "CV"
       url: "/cv.pdf"
-      weight: 4
+      weight: 5
 
 params:
   # (Optional, default true) Controls table of contents visibility on right side of pages.
   # Start and end levels can be controlled with markup.tableOfContents setting.
   # You can also specify this parameter per page in front matter.
-  BookToC: false
+  BookToC: true
 
   # (Optional, default none) Set the path to a logo for the book. If the logo is
   # /static/logo.png then the path would be logo.png
