@@ -8,7 +8,7 @@ I am a graduate student at <a href="/">Auburn University</a> where I am pursuing
 
 I have experience designing HW and integrating with SW for projects for the academia and the industry. More recently, I have been working on robotics, machine learning and deep learning for computer vision. I am currently working on projects that speed up breeding research trials using of deep learning as a tool for high-throughput plant phenotyping.
 
-On my spare time I enjoy to practicing <a href="/">Brazilian Jiu-Jitsu</a>, working on DIY projects and playing old computer games.
+On my spare time I enjoy practicing <a href="/">Brazilian Jiu-Jitsu</a>, working on DIY projects and playing old computer games.
 
 ---
 
